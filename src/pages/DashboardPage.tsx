@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../store/authStore';
 
@@ -12,7 +12,7 @@ interface DashboardStats {
 export const DashboardPage = () => {
   const navigate = useNavigate();
   const { user, clearAuth } = useAuthStore();
-  const [stats, setStats] = useState<DashboardStats>({
+  const [stats] = useState<DashboardStats>({
     totalStudents: 150,
     presentToday: 142,
     absentToday: 5,
